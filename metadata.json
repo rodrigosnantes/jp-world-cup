@@ -1,0 +1,6 @@
+{
+  "name": "JPFFS Copa do Mundo",
+  "description": "Landing page moderna da competição de futebol JPFFS inspirada na Copa do Mundo, com as 4 seleções participantes e 24 atletas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
