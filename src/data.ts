@@ -71,20 +71,20 @@ export const INITIAL_TEAMS: Team[] = [
 
 export const INITIAL_MATCHES: Match[] = [
   // Primeira fase (Data 27 Junho)
-  { id: 'm1', homeTeamId: 'brasil', awayTeamId: 'inglaterra', homeScore: 0, awayScore: 1, isCompleted: true, date: '2026-06-27', time: '19:00', round: 'Primeira fase' },
-  { id: 'm2', homeTeamId: 'espanha', awayTeamId: 'italia', homeScore: 5, awayScore: 4, isCompleted: true, date: '2026-06-27', time: '19:40', round: 'Primeira fase' },
+  { id: 'm1', homeTeamId: 'brasil', awayTeamId: 'inglaterra', homeScore: 0, awayScore: 1, isCompleted: true, date: '2026-06-27', time: '16:00', round: 'Primeira fase' },
+  { id: 'm2', homeTeamId: 'espanha', awayTeamId: 'italia', homeScore: 5, awayScore: 4, isCompleted: true, date: '2026-06-27', time: '16:30', round: 'Primeira fase' },
 
   // Segunda fase (Data 27 Junho)
-  { id: 'm3', homeTeamId: 'espanha', awayTeamId: 'inglaterra', homeScore: undefined, awayScore: undefined, isCompleted: false, date: '2026-06-27', time: '20:20', round: 'Segunda fase' },
-  { id: 'm4', homeTeamId: 'brasil', awayTeamId: 'italia', homeScore: undefined, awayScore: undefined, isCompleted: false, date: '2026-06-27', time: '21:00', round: 'Segunda fase' },
+  { id: 'm3', homeTeamId: 'espanha', awayTeamId: 'inglaterra', homeScore: undefined, awayScore: undefined, isCompleted: false, date: '2026-06-27', time: '16:00', round: 'Segunda fase' },
+  { id: 'm4', homeTeamId: 'brasil', awayTeamId: 'italia', homeScore: undefined, awayScore: undefined, isCompleted: false, date: '2026-06-27', time: '16:30', round: 'Segunda fase' },
 
   // Terceira fase (Data 11 Julho)
-  { id: 'm5', homeTeamId: 'brasil', awayTeamId: 'espanha', homeScore: undefined, awayScore: undefined, isCompleted: false, date: '2026-07-11', time: '19:00', round: 'Terceira fase' },
-  { id: 'm6', homeTeamId: 'inglaterra', awayTeamId: 'italia', homeScore: undefined, awayScore: undefined, isCompleted: false, date: '2026-07-11', time: '19:40', round: 'Terceira fase' },
+  { id: 'm5', homeTeamId: 'brasil', awayTeamId: 'espanha', homeScore: undefined, awayScore: undefined, isCompleted: false, date: '2026-07-11', time: '16:00', round: 'Terceira fase' },
+  { id: 'm6', homeTeamId: 'inglaterra', awayTeamId: 'italia', homeScore: undefined, awayScore: undefined, isCompleted: false, date: '2026-07-11', time: '16:30', round: 'Terceira fase' },
 
   // Finais (Data 18 Julho)
-  { id: 'm7', homeTeamId: 'italia', awayTeamId: 'brasil', homeScore: undefined, awayScore: undefined, isCompleted: false, date: '2026-07-18', time: '19:00', round: 'Finais (3º Lugar)' },
-  { id: 'm8', homeTeamId: 'espanha', awayTeamId: 'inglaterra', homeScore: undefined, awayScore: undefined, isCompleted: false, date: '2026-07-18', time: '20:00', round: 'Finais (Grande Final)' }
+  { id: 'm7', homeTeamId: 'italia', awayTeamId: 'brasil', homeScore: undefined, awayScore: undefined, isCompleted: false, date: '2026-07-18', time: '16:00', round: 'Finais (3º Lugar)' },
+  { id: 'm8', homeTeamId: 'espanha', awayTeamId: 'inglaterra', homeScore: undefined, awayScore: undefined, isCompleted: false, date: '2026-07-18', time: '16:30', round: 'Finais (Grande Final)' }
 ];
 
 export const GENERAL_STATS = {

@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Trophy, Users, Play } from 'lucide-react';
 import { Team, Match } from '../types';
 import Flag from './Flag';
+import logo from '../assets/logo-white.png';
 
 interface HeroProps {
   teams: Team[];
@@ -27,6 +28,19 @@ export default function Hero({ teams, matches, onScrollToSection }: HeroProps) {
         >
           <Trophy className="w-4 h-4 text-brand-yellow animate-pulse" />
           Jogadores profissionais de futebol de final de semana
+        </motion.div>
+
+        {/* Brand Logo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.05 }}
+        >
+          <img
+            src={logo}
+            alt="JPFFS"
+            className="h-28 md:h-40 w-auto object-contain mx-auto drop-shadow-2xl"
+          />
         </motion.div>
 
         {/* Brand Main Title */}

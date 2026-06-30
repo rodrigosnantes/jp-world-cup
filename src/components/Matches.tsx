@@ -31,6 +31,8 @@ export default function Matches({ teams, matches, standings }: MatchesProps) {
   const firstPhaseMatches = matches.filter(m => m.round === 'Primeira fase');
   const secondPhaseMatches = matches.filter(m => m.round === 'Segunda fase');
   const thirdPhaseMatches = matches.filter(m => m.round === 'Terceira fase');
+  const thirdPlaceMatch = matches.find(m => m.round === 'Finais (3º Lugar)');
+  const grandFinalMatch = matches.find(m => m.round === 'Finais (Grande Final)');
 
   // Standings positions helper to dynamically assign teams to the finals preview
   const firstPlace = standings[0] ? getTeam(standings[0].teamId) : null;
@@ -289,7 +291,7 @@ export default function Matches({ teams, matches, standings }: MatchesProps) {
                         <span className="text-[10px] font-bold font-mono uppercase text-emerald-400 tracking-wider bg-emerald-500/10 px-2 py-1 rounded-md">
                           Disputa de 3º Lugar
                         </span>
-                        <span className="text-[10px] text-slate-500 font-mono">19:00</span>
+                        <span className="text-[10px] text-slate-500 font-mono">{thirdPlaceMatch?.time ?? '16:00'}</span>
                       </div>
 
                       {/* Teams matchup list */}
@@ -349,7 +351,7 @@ export default function Matches({ teams, matches, standings }: MatchesProps) {
                         <span className="text-[10px] font-bold font-mono uppercase text-yellow-400 tracking-wider bg-yellow-500/10 px-2 py-1 rounded-md flex items-center gap-1">
                           <Trophy className="w-3 h-3" /> Grande Final
                         </span>
-                        <span className="text-[10px] text-slate-500 font-mono">20:00</span>
+                        <span className="text-[10px] text-slate-500 font-mono">{grandFinalMatch?.time ?? '16:30'}</span>
                       </div>
 
                       {/* Teams matchup list */}

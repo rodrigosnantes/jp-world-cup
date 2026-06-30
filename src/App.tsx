@@ -7,8 +7,7 @@ import About from './components/About';
 import Teams from './components/Teams';
 import Matches from './components/Matches';
 import Leaderboard from './components/Leaderboard';
-import JpffsLogo from './components/JpffsLogo';
-import { Trophy, Shield, Calendar, Users, BarChart3, Info, Flame, AlertCircle } from 'lucide-react';
+import logo from './assets/logo-black.png';
 
 const TEAMS_STORAGE_KEY = 'jpffs_cup_teams_v4_fixed_goalkeepers';
 const MATCHES_STORAGE_KEY = 'jpffs_cup_matches_v4_fixed_goalkeepers';
@@ -78,63 +77,6 @@ export default function App() {
     );
   };
 
-  // Update specific match score / status
-  const handleUpdateScore = (
-    matchId: string,
-    homeScore: number | undefined,
-    awayScore: number | undefined,
-    isCompleted: boolean
-  ) => {
-    setMatches(prevMatches => {
-      let updated = prevMatches.map(match => {
-        if (match.id !== matchId) return match;
-        return {
-          ...match,
-          homeScore,
-          awayScore,
-          isCompleted
-        };
-      });
-
-      // Compute dynamic finalists for the Grande Final (m3) based on Semifinals
-      const sf1 = updated.find(m => m.id === 'm1');
-      const sf2 = updated.find(m => m.id === 'm2');
-
-      let homeFinalist: Team['id'] = 'brasil';
-      let awayFinalist: Team['id'] = 'italia';
-
-      if (sf1 && sf1.homeScore !== undefined && sf1.awayScore !== undefined) {
-        homeFinalist = sf1.homeScore >= sf1.awayScore ? 'brasil' : 'espanha';
-      }
-      if (sf2 && sf2.homeScore !== undefined && sf2.awayScore !== undefined) {
-        awayFinalist = sf2.homeScore >= sf2.awayScore ? 'inglaterra' : 'italia';
-      }
-
-      updated = updated.map(match => {
-        if (match.id === 'm3') {
-          return {
-            ...match,
-            homeTeamId: homeFinalist,
-            awayTeamId: awayFinalist
-          };
-        }
-        return match;
-      });
-
-      return updated;
-    });
-  };
-
-  // Reset simulation to initial default data
-  const handleResetMatches = () => {
-    if (window.confirm('Tem certeza de que deseja resetar todas as simulações e dados de jogadores para os padrões originais?')) {
-      setTeams(INITIAL_TEAMS);
-      setMatches(INITIAL_MATCHES);
-      localStorage.removeItem(TEAMS_STORAGE_KEY);
-      localStorage.removeItem(MATCHES_STORAGE_KEY);
-    }
-  };
-
   // Safe scrolling method for landing sections
   const handleScrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -155,7 +97,7 @@ export default function App() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-2.5 cursor-pointer select-none group"
           >
-            <JpffsLogo size={42} className="group-hover:scale-105 transition-transform duration-200" />
+            <img src={logo} alt="JPFFS" className="h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-200" />
             <div>
               <span className="font-black text-lg tracking-wider text-white uppercase block leading-none">JPFFS</span>
               <span className="text-[9px] text-emerald-400 font-bold uppercase tracking-widest leading-none mt-1">Copa do Mundo</span>
@@ -236,7 +178,7 @@ export default function App() {
       <footer className="border-t border-slate-900/80 bg-slate-950/50 py-12 px-4 md:px-8 text-center relative z-10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <JpffsLogo size={36} />
+            <img src={logo} alt="JPFFS" className="h-9 w-auto object-contain" />
             <div className="text-left font-mono">
               <span className="font-extrabold text-white block text-sm">JPFFS Football Club</span>
               <span className="text-[10px] text-slate-500 uppercase tracking-widest">Desde 2008</span>
